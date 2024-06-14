@@ -1,0 +1,28 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.logo-container {
+    width: 100vw;
+    overflow-y: hidden;
+}
+
+.logo-background {
+    position: absolute;
+    width: 100%;
+    z-index: 0;
+    object-fit: fill;
+}
+
+.logo-mask {
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+}
+
+div {
+    height: 500px;
+    background-color: aquamarine;
+    z-index: 1;
+}
