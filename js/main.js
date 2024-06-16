@@ -13,7 +13,6 @@ const adjustSize = () => {
     logoBackground.style.width = width;
     logoBackground.style.height = height;
 
-    logoContainer.style.width = width;
     logoContainer.style.height = height;
 }
 

@@ -8,12 +8,16 @@ header {
     width: 100vw;
     position: fixed;
     top: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     z-index: 2;
 }
 
 body {
     position: relative;
-    background-color: #fafafa;
+    background-color: white;
 }
 
 
@@ -21,20 +25,22 @@ body {
 /*Animated logo styling*/
 
 .logo-container {
-    width: 100vw;
-    overflow-y: hidden;
+    position: relative;
+    width: 90vw;            /*ADJUST HERE TO MODIFY LOGO SIZE*/
+    overflow: hidden;
 }
 
 .logo-background {
-    position: absolute;
-    width: 100%;
+    position: fixed;
+    width: 90%;
     z-index: 0;
-    object-fit: fill;
+    object-fit: cover;
 }
 
 .logo-mask {
-    position: absolute;
-    width: 100%;
+    position: fixed;
+    width: 90%;
+    height: auto;
     z-index: 1;
 }
 
@@ -54,9 +60,9 @@ ul {
     background-color: white;
     border-radius: 50px;
     background: #ebebeb;
-    box-shadow:  15px 15px 20px #c8c8c8,
-                 inset 5px 5px 30px #ffffff,
-                 inset -5px -5px 30px #c8c8c8;;
+    box-shadow:  15px 15px 20px hsla(50, 0%, 0%, 0.2),
+                 inset 5px 5px 30px hsla(50, 100%, 100%, 1),
+                 inset -5px -5px 30px hsla(50, 0%, 0%, 0.2);
     z-index: 1;
 }
 
@@ -85,20 +91,29 @@ li:hover {
 }
 
 .menu {
-    margin-top: 15px;
     min-width: 100vw;
+    scroll-snap-align: start;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-card {
+    margin-top: 40px;
+    width: 80%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: white;
+    background-color: #f4f4f4;
     border-radius: 30px;
     z-index: 0;
-    scroll-snap-align: start;
 }
 
 .item {
-    background-color: aquamarine;
     width: 90%;
     margin: 10px;
-    /*flex: none;*/
+    flex: none;
+    background-color: rgb(127, 227, 255);
+    border-radius: 30px;
+    box-shadow:  5px 5px 5px hsla(50, 0%, 0%, 0.2);
 }
