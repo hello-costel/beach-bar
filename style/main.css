@@ -1,10 +1,20 @@
 * {
     margin: 0px;
     padding: 0px;
+    font-family: Arial, Helvetica, sans-serif;
     list-style: none;
+    scrollbar-width: 0px;
+    scrollbar-color: transparent;
+}
+
+*::-webkit-scrollbar {
+    display: none;
+    width: 0px;
+    background: transparent;
 }
 
 header {
+    height: 100vh;
     width: 100vw;
     position: fixed;
     top: 0px;
@@ -13,6 +23,13 @@ header {
     justify-content: center;
     align-items: center;
     z-index: 2;
+    transition: height 0.8s ease, line-height 0.8s ease;
+}
+header.small {
+    height: 150px;
+}
+header.small nav {
+    opacity: 1;
 }
 
 body {
@@ -26,8 +43,12 @@ body {
 
 .logo-container {
     position: relative;
-    width: 90vw;            /*ADJUST HERE TO MODIFY LOGO SIZE*/
+    width: 100vw;
     overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
 }
 
 .logo-background {
@@ -39,8 +60,9 @@ body {
 
 .logo-mask {
     position: fixed;
-    width: 90%;
+    width: 70%;                     /*Adjust logo-size here.*/
     height: auto;
+    max-height: 100px;              /*BUG: to set max-width to avoid distortion*/
     z-index: 1;
 }
 
@@ -51,29 +73,31 @@ body {
 nav {
     display: flex;
     justify-content: center;
+    opacity: 0;
+    transition: opacity 0.8s ease;
 }
 ul {
     width: 90vw;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     overflow: hidden;
-    background-color: white;
+    background-color: rgba(0, 0%, 0%, 0.05);
     border-radius: 50px;
-    background: #ebebeb;
-    box-shadow:  15px 15px 20px hsla(50, 0%, 0%, 0.2),
+    box-shadow:  15px 15px 20px hsla(50, 0%, 0%, 0.25),
                  inset 5px 5px 30px hsla(50, 100%, 100%, 1),
-                 inset -5px -5px 30px hsla(50, 0%, 0%, 0.2);
+                 inset -5px -5px 30px hsla(50, 0%, 0%, 0.25);
     z-index: 1;
 }
 
-li {
+.menu-button {
     height: 3em;
     display: flex;
     align-items: center;
     justify-content: center;
+    text-decoration: none;
 }
 
-li:hover {
+.menu-button:hover {
     background-color: #94e3fe;
     border-radius: 50px;
 }
@@ -94,8 +118,10 @@ li:hover {
     min-width: 100vw;
     scroll-snap-align: start;
     display: flex;
-    align-items: center;
+    align-items: start;
     justify-content: center;
+    height: 80vh;
+    overflow-y: auto;
 }
 
 .menu-card {
@@ -113,7 +139,24 @@ li:hover {
     width: 90%;
     margin: 10px;
     flex: none;
-    background-color: rgb(127, 227, 255);
     border-radius: 30px;
-    box-shadow:  5px 5px 5px hsla(50, 0%, 0%, 0.2);
+    box-shadow:  5px 5px 5px hsla(50, 0%, 0%, 0.4);
+}
+
+.menu h2 {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 30px;
+}
+
+#coffee .item {
+    background-color: rgb(176, 1, 25);
+}
+
+#ice-cream .item {
+    background-color: rgb(1, 141, 176);
+}
+
+#drink .item {
+    background-color: rgb(203, 0, 172);
 }
